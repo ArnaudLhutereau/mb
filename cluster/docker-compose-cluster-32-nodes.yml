@@ -1,0 +1,333 @@
+---
+version: "3"
+services:
+    proxy:
+        ports:
+          - 3000:3000
+        deploy:
+            mode: replicated
+            placement:
+                constraints: [node.role == manager]
+            replicas: 1
+        image: nonovitch/proxy2:latest
+    zoo1:
+        image: zookeeper
+        ports:
+          - 2181:2181
+        environment:
+          - ZOO_MY_ID=1
+        deploy:
+            mode: replicated
+            placement:
+                constraints: [node.role == manager]
+    metadata:
+        image: redis:3.2.8
+        command: redis-server --appendonly yes
+        deploy:
+            mode: replicated
+            placement:
+                constraints: [node.role == manager]
+    storage-node-1:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-2:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-3:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-4:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-5:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-6:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-7:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-8:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-9:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-10:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-11:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-12:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-13:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-14:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-15:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+    storage-node-16:
+        environment:
+          - MINIO_ACCESS_KEY=playcloud
+          - MINIO_SECRET_KEY=playcloud
+        image: minio/minio:latest
+        command: server /data
+       
+    bootnode:
+        image: nonovitch/bootnode:latest
+        ports:
+          - 30301:30301/udp
+          - 1234:1234
+    node1:
+        image: nonovitch/node1:latest
+        ports:
+          - 8001:8001
+          - 9001:9001
+          - 30304:30304
+    node2:
+        image: nonovitch/node2:latest
+        ports:
+          - 8002:8002
+          - 9002:9002
+          - 30305:30305
+    node3:
+        image: nonovitch/node3:latest
+        ports:
+          - 8003:8003
+          - 9003:9003
+          - 30306:30306
+    node4:
+        image: nonovitch/node4:latest
+        ports:
+          - 8004:8004
+          - 9004:9004
+          - 30307:30307
+    node5:
+        image: nonovitch/node5:latest
+        ports:
+          - 8005:8005
+          - 9005:9005
+          - 30308:30308
+    node6:
+        image: nonovitch/node6:latest
+        ports:
+          - 8006:8006
+          - 9006:9006
+          - 30309:30309
+    node7:
+        image: nonovitch/node7:latest
+        ports:
+          - 8007:8007
+          - 9007:9007
+          - 30310:30310
+    node8:
+        image: nonovitch/node8:latest
+        ports:
+          - 8008:8008
+          - 9008:9008
+          - 30311:30311
+    node9:
+        image: nonovitch/node9:latest
+        ports:
+          - 8009:8009
+          - 9009:9009
+          - 30312:30312
+    node10:
+        image: nonovitch/node10:latest
+        ports:
+          - 8010:8010
+          - 9010:9010
+          - 30313:30313
+    node11:
+        image: nonovitch/node11:latest
+        ports:
+          - 8011:8011
+          - 9011:9011
+          - 30314:30314
+    node12:
+        image: nonovitch/node12:latest
+        ports:
+          - 8012:8012
+          - 9012:9012
+          - 30315:30315
+    node13:
+        image: nonovitch/node13:latest
+        ports:
+          - 8013:8013
+          - 9013:9013
+          - 30316:30316
+    node14:
+        image: nonovitch/node14:latest
+        ports:
+          - 8014:8014
+          - 9014:9014
+          - 30317:30317
+    node15:
+        image: nonovitch/node15:latest
+        ports:
+          - 8015:8015
+          - 9015:9015
+          - 30318:30318
+    node16:
+        image: nonovitch/node16:latest
+        ports:
+          - 8016:8016
+          - 9016:9016
+          - 30319:30319
+    node17:
+        image: nonovitch/node17:latest
+        ports:
+          - 8017:8017
+          - 9017:9017
+          - 30320:30320
+    node18:
+        image: nonovitch/node18:latest
+        ports:
+          - 8018:8018
+          - 9018:9018
+          - 30321:30321
+    node19:
+        image: nonovitch/node19:latest
+        ports:
+          - 8019:8019
+          - 9019:9019
+          - 30322:30322
+    node20:
+        image: nonovitch/node20:latest
+        ports:
+          - 8020:8020
+          - 9020:9020
+          - 30323:30323
+    node21:
+        image: nonovitch/node21:latest
+        ports:
+          - 8021:8021
+          - 9021:9021
+          - 30324:30324
+    node22:
+        image: nonovitch/node22:latest
+        ports:
+          - 8022:8022
+          - 9022:9022
+          - 30325:30325
+    node23:
+        image: nonovitch/node23:latest
+        ports:
+          - 8023:8023
+          - 9023:9023
+          - 30326:30326
+    node24:
+        image: nonovitch/node24:latest
+        ports:
+          - 8024:8024
+          - 9024:9024
+          - 30327:30327
+    node25:
+        image: nonovitch/node25:latest
+        ports:
+          - 8025:8025
+          - 9025:9025
+          - 30328:30328
+    node26:
+        image: nonovitch/node26:latest
+        ports:
+          - 8026:8026
+          - 9026:9026
+          - 30329:30329
+    node27:
+        image: nonovitch/node27:latest
+        ports:
+          - 8027:8027
+          - 9027:9027
+          - 30330:30330
+    node28:
+        image: nonovitch/node28:latest
+        ports:
+          - 8028:8028
+          - 9028:9028
+          - 30331:30331
+    node29:
+        image: nonovitch/node29:latest
+        ports:
+          - 8029:8029
+          - 9029:9029
+          - 30332:30332
+    node30:
+        image: nonovitch/node30:latest
+        ports:
+          - 8030:8030
+          - 9030:9030
+          - 30333:30333
+    node31:
+        image: nonovitch/node31:latest
+        ports:
+          - 8031:8031
+          - 9031:9031
+          - 30334:30334
+    node32:
+        image: nonovitch/node32:latest
+        ports:
+          - 8032:8032
+          - 9032:9032
+          - 30335:30335
+    client_put:
+        image: nonovitch/client_put:latest
+    client_rebuild:
+        image: nonovitch/client_rebuild:latest
+    stats:
+        image: nonovitch/stats:latest
+        ports:
+          - 80:80
+    rabbitmq_server:
+        image: nonovitch/rabbitmq_server:latest

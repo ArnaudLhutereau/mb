@@ -1,0 +1,209 @@
+---
+version: "3"
+services:
+  bootnode:
+    build: ./boot_node
+    environment:
+      - nodekeyhex=12983117580d4abb3c84b0f9372351419e150a1f76fc07590c5a89ee884391ba
+    ports:
+      - 30301:30301/udp
+      - 1234:1234
+  node1:
+    build: ./node1
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8001:8001
+      - 9001:9001
+      - 30304:30304
+  node2:
+    build: ./node2
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8002:8002
+      - 9002:9002
+      - 30305:30305
+  node3:
+    build: ./node3
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8003:8003
+      - 9003:9003
+      - 30306:30306
+  node4:
+    build: ./node4
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8004:8004
+      - 9004:9004
+      - 30307:30307
+  node5:
+    build: ./node5
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8005:8005
+      - 9005:9005
+      - 30308:30308
+  node6:
+    build: ./node6
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8006:8006
+      - 9006:9006
+      - 30309:30309
+  node7:
+    build: ./node7
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8007:8007
+      - 9007:9007
+      - 30310:30310
+  node8:
+    build: ./node8
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8008:8008
+      - 9008:9008
+      - 30311:30311
+  node9:
+    build: ./node9
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8009:8009
+      - 9009:9009
+      - 30312:30312
+  node10:
+    build: ./node10
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8010:8010
+      - 9010:9010
+      - 30313:30313
+  node11:
+    build: ./node11
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8011:8011
+      - 9011:9011
+      - 30314:30314
+  node12:
+    build: ./node12
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8012:8012
+      - 9012:9012
+      - 30315:30315
+  node13:
+    build: ./node13
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8013:8013
+      - 9013:9013
+      - 30316:30316
+  node14:
+    build: ./node14
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8014:8014
+      - 9014:9014
+      - 30317:30317
+  node15:
+    build: ./node15
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8015:8015
+      - 9015:9015
+      - 30318:30318
+  node16:
+    build: ./node16
+    depends_on:
+      - bootnode
+    environment:
+      - bootnodeId=c3ee4d19e4a97ae5372ee8f939837d79b1d14472005c3605827b7b954ff0c5383cd7a6b2e5998e16ab0e180bde7552e3e11321a1f28a0978a60a7011f8d5e6a4
+      - bootnodeIp=172.18.0.22
+    ports:
+      - 8016:8016
+      - 9016:9016
+      - 30319:30319
+  client_put:
+    build: ./client_put
+    depends_on:
+      - bootnode
+  client_rebuild:
+    build: ./client_rebuild
+    depends_on:
+      - bootnode
+  stats:
+    build: ./stats
+    depends_on:
+      - bootnode
+    ports:
+      - 80:80
+  rabbitmq_server:
+    build: ./rabbitmq_server
+    depends_on:
+      - bootnode
+
+networks:
+  default:
+    external:
+      name: recast_block
