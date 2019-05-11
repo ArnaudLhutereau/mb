@@ -26,7 +26,7 @@ To see the performances, a statistics container is integrated and display some i
 
 ## Architecture with Recast
 
-![Architecture of Metablock](http://nonotools.fr/projets/metablock/metablock.png)
+![Architecture of Metablock](https://raw.githubusercontent.com/ArnaudLhutereau/mb/master/metablock.png)
 
 
 
